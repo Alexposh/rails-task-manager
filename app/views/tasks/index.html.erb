@@ -1,0 +1,18 @@
+
+<h3>All the tasks here:</h3>
+
+<ul>
+<% @tasks.each do |task| %>
+    <li>
+      <%= link_to task.title, task_path(task) %>
+      <%= task.completed ? "Done" : "Not done" %>
+      <%= link_to "Edit this task", edit_path(task), class: "btn btn-primary"%>
+      <%= link_to "Delete this task", delete_path(task),
+                    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-warning"
+      %>
+    </li>
+  <% end %>
+
+</ul>
+
+<%= link_to "Create a new task", new_path %>

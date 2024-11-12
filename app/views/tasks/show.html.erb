@@ -1,0 +1,4 @@
+<h3><%= @task.title %></h3>
+<p><%= @task.details %></p>
+<p><%= @task.completed ? "Done" : "Still to be done" %></p>
+<%= link_to "Go to all the tasks", tasks_path %>
